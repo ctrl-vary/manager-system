@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html>
+    
+    <head>
+        <meta charset="utf-8">
+        <title>
+            后台管理系统
+        </title>
+        <meta name="renderer" content="webkit">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="format-detection" content="telephone=no">
+        <link rel="stylesheet" href="./css/x-admin.css" media="all">
+    </head>
+    
+    <body>
+        <div class="x-body" >
+            <form class="layui-form" method="post" enctype="multipart/form-data">
+                <div class="layui-form-item">
+                    <label for="name" class="layui-form-label">
+                        <span class="x-red">*</span>客户姓名
+                    </label>
+                    <div class="layui-input-inline">
+                        <input type="text" id="name" name="name" required="" lay-verify="required" th:value="${kh.name}"
+                        autocomplete="off" class="layui-input">
+                    </div>
+                </div>
+
+                <div class="layui-form-item">
+                    <label class="layui-form-label">
+                        <span class='x-red'>*</span>性别
+                    </label>
+                    <div class="layui-input-block" >
+                        <input type="radio" name="gender" value="男" title="男" id="m">
+                        <div class="layui-unselect layui-form-radio layui-form-radioed"><i class="layui-anim layui-icon layui-anim-scaleSpring"></i>
+                            <div  style="font-size: 14px">男</div>
+                        </div>
+                        <input type="radio" name="gender" value="女" title="女" id="w">
+                        <div class="layui-unselect layui-form-radio"  style="font-size: 14px"><i class="layui-anim layui-icon"></i>
+                            <div>女</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="layui-form-item">
+                    <label for="idn" class="layui-form-label">
+                        <span class="x-red">*</span>身份证号码
+                    </label>
+                    <div class="layui-input-inline">
+                        <input type="text" id="idn" th:value="${kh.idn}" name="idn" required="" lay-verify="identity"
+                               autocomplete="off" class="layui-input">
+                    </div>
+                </div>
+
+                <div class="layui-form-item">
+                    <label for="phone" class="layui-form-label">
+                        <span class="x-red">*</span>联系电话
+                    </label>
+                    <div class="layui-input-inline">
+                        <input type="text" id="phone" th:value="${kh.phone}" name="phone" required="" lay-verify="phone"
+                        autocomplete="off" class="layui-input">
+                    </div>
+                </div>
+
+                <div class="layui-form-item">
+                    <label for="email" class="layui-form-label">
+                        <span class="x-red">*</span>邮箱地址
+                    </label>
+                    <div class="layui-input-inline">
+                        <input type="text" id="email" name="email" required="" lay-verify="email" th:value="${kh.email}"
+                        autocomplete="off" class="layui-input">
+                    </div>
+                </div>
+
+                <div class="layui-form-item">
+                    <label class="layui-form-label"><span class='x-red'>*</span>出生日期</label>
+                    <div class="layui-input-inline">
+                        <input class="layui-input" placeholder="请选择" id="bdate" name="bdate" th:value="${kh.bdate}" lay-verify="date">
+                    </div>
+                </div>
+
+                <div class="layui-form-item">
+                    <label for="company" class="layui-form-label">
+                        <span class="x-red">*</span>客户单位
+                    </label>
+                    <div class="layui-input-inline">
+                        <input type="text" id="company" name="company" required="" lay-verify="required"
+                               autocomplete="off" class="layui-input" th:value="${kh.company}">
+                    </div>
+                </div>
+
+                <div class="layui-form-item">
+                    <label for="managerid" class="layui-form-label">
+                        <span class="x-red">*</span>经理编号
+                    </label>
+                    <div class="layui-input-inline">
+                        <input type="text" id="managerid" name="managerid" required="" lay-verify="number"
+                               autocomplete="off" class="layui-input" th:value="${kh.managerid}">
+                    </div>
+                </div>
+
+                <div class="layui-form-item">
+                    <label for="manager" class="layui-form-label">
+                        <span class="x-red">*</span>经理姓名
+                    </label>
+                    <div class="layui-input-inline">
+                        <input type="text" id="manager" name="manager" required="" lay-verify="required"
+                               autocomplete="off" class="layui-input" th:value="${kh.manager}">
+                    </div>
+                </div>
+
+                <div class="layui-form-item">
+                    <input type="hidden" name="url" class="image" id="url">
+                    <div class="layui-form-item">
+                        <label class="layui-form-label ">照片:</label>
+                        <div class="layui-upload">
+                            <button type="button" class="layui-btn" id="test1">修改头像</button>
+                            <div class="layui-upload-list" style="margin-left: 100px">
+                                <img class="layui-upload-img" th:src="${kh.url}" id="demo1" width="120" height="120"style="margin-top: 16px;margin-left: 12px">
+                                <p id="demoText"></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="layui-form-item">
+                    <label for="edu" class="layui-form-label">
+                        所属地区
+                    </label>
+                    <div class="layui-input-inline">
+                        <input type="text" id="region" name="region" required="" lay-verify=""
+                               autocomplete="off" class="layui-input" th:value="${kh.region}">
+                    </div>
+                </div>
+
+                    <div class="layui-form-item">
+                        <label for="edu" class="layui-form-label">
+                            学历
+                        </label>
+                        <div class="layui-input-inline">
+                            <input type="text" id="edu" name="edu" required="" lay-verify=""
+                                   autocomplete="off" class="layui-input" th:value="${kh.edu}">
+                        </div>
+                    </div>
+
+                    <div class="layui-form-item layui-form-text">
+                        <label class="layui-form-label">
+                            备注
+                        </label>
+                        <div class="layui-input-block">
+                            <textarea  th:value="${kh.tips}" name="tips" class="layui-textarea"></textarea>
+                        </div>
+                    </div>
+
+
+                <div class="layui-form-item" style="width: 64px;height: 38px"  onclick="update()" >
+                    <button class="layui-btn"  type="button">
+                        修改
+                    </button>
+                </div>
+
+
+                    <input type="hidden" name="id" id="id"  th:value="${kh.id}">
+                <input type="hidden" name="gender" id="gender"  th:value="${kh.gender}">
+
+
+            </form>
+        </div>
+
+        <script src="./lib/layui/layui.js" charset="utf-8">
+        </script>
+        <script src="./js/x-layui.js" charset="utf-8">
+        </script>
+        <script src="./js/jquery-3.2.1.min.js"></script>
+        <script>
+            layui.use(['laydate','element','layer','form'], function(){
+                $ = layui.jquery;
+                laydate = layui.laydate,//日期插件
+               form = layui.form
+              ,layer = layui.layer;
+
+                  var start = {
+                      min: '1600-06-16 23:59:59'
+                      ,max: '2099-06-16 23:59:59'
+                      ,istoday: false
+                      ,choose: function(datas){
+                          end.min = datas; //开始日选好后，重置结束日的最小日期
+                          end.start = datas //将结束日的初始值设定为开始日
+                      }
+                  };
+                document.getElementById('bdate').onclick = function(){
+                    start.elem = this;
+                    laydate(start);
+                }
+            });
+            $(document).ready(function () {
+                var m=document.getElementById("m");
+                var w=document.getElementById("w");
+                var gender=document.getElementById("gender").value;
+                if(gender=="男"){
+                    m.checked='checked';
+                }else {
+                    w.checked='checked';
+                }
+            })
+
+                //修改
+                // form.on('submit(add)', function(data){
+                //     console.log(data);
+                function update() {
+
+                    var name=$("input[name='name']").val();
+                    var url=$("input[name='url']").val();
+                    var idn=$("input[name='idn']").val();
+                    var company=$("input[name='company']").val();
+                    var managerid=$("input[name='managerid']").val();
+                    var manager=$("input[name='manager']").val();
+                    var phone=$("input[name='phone']").val();
+                    var email=$("input[name='email']").val();
+                    var bdate=$("input[name='bdate']").val();
+                    var edu=$("input[name='edu']").val();
+                    var region=$("input[name='region']").val();
+                    var tips=$("textarea[name='tips']").val();
+                    var gender=$("input[name='gender']:checked").val();
+                    var id=$("input[name='id']").val();
+                    if(name==""||idn==""||phone==""||email==""||company==""||managerid==""||manager==""||bdate=="")
+                    {
+                        layer.msg('客户基本信息不能为空！',{icon:5,time:2000});return false;
+                    }
+                    else{
+                    if(url==""){
+                        url="/";
+                    }
+                    if(edu==""){
+                        edu="/";
+                    }
+                    if(tips==""){
+                        tips="/";
+                    }
+                    if(region==""){
+                        region="/";
+                    }
+                    //发送 ajax请求
+                    $.ajax({
+                        url: "/edit",
+                        type: "post",
+                        data:{"id":id,"name":name,"gender":gender,"url":url,"phone":phone,"email":email,"bdate":bdate,"edu":edu,"idn":idn,"region":region,"company":company,"managerid":managerid,"manager":manager,"tips":tips},
+                        dataType: "json",//返回的数据类型
+                        success: function (data) {
+                            //如果注册成功就跳转到登录页面
+                            if (data.info=="修改成功") {
+                                layer.alert("修改成功",function (index) {
+
+                                    //关闭弹窗
+                                    // 获得frame索引
+                                    var index = parent.layer.getFrameIndex(window.name);
+                                    //关闭当前frame
+                                    parent.layer.close(index);
+                                    parent.location.reload();
+
+
+                                })
+                                return false;
+                            }
+                            else{
+
+                                layer.msg(data.info,{icon:5,time:2000});return false;
+                            }
+                        }
+                    })
+
+                }}
+
+
+
+
+
+
+            //加载文件上传组件
+            layui.use('upload', function(){
+
+                var $ = layui.jquery
+                    ,upload = layui.upload;
+                //普通图片上传（上传按钮点击事件）
+                var uploadInst = upload.render({
+                    elem: '#test1'  //通过id绑定按钮点击事件
+                    ,url: '/upload'  //服务器地址
+                    ,accept:'url'      //上传的文件类型 （image,file(所有文件)，video，audio（音频））
+                    ,size:50000       //文件大小
+                    ,before: function(obj){  //不管上传成功或失败都会执行
+                        obj.preview(function(index, file, result){
+                            //显示上传图片
+                            $('#demo1').attr('src', result);
+                        });
+                    }
+                    ,done: function(res){  //访问服务端后执行的函数（res是服务端传回的值）
+                        //如果上传失败
+                        if(res.code > 0){
+                            return layer.msg('上传失败');
+                        }
+                        //上传成功
+                        //提示信息
+                        var demoText = $('#demoText');
+                        demoText.html('<span style="color: #4cae4c;">上传成功</span>');
+
+                        // var fileupload = $(".image");
+                        // //把图片在项目中的路径存入到 属性 class=image的input框中
+                        // fileupload.attr("value",res.data.src);
+                        $("#url").val(res.src);
+
+                        // console.log(fileupload.attr("value"));
+                    }
+                    ,error: function(){
+                        //演示失败状态，并实现重传
+                        var demoText = $('#demoText');
+                        demoText.html('<span style="color: #FF5722;">上传失败</span> <a class="layui-btn layui-btn-xs demo-reload">重试</a>');
+                        demoText.find('.demo-reload').on('click', function(){
+                            uploadInst.upload();
+                        });
+                    }
+                });
+            });
+
+
+
+
+
+
+        </script>
+        
+    </body>
+
+</html>

@@ -1,0 +1,550 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>官网</title>
+    <link rel="stylesheet" href="/css/font.css">
+    <link rel="stylesheet" href="/css/x-admin.css">
+    <link rel="stylesheet" href="/lib/layer/css/layui.css">
+    <script src="/js/jquery-3.2.1.min.js"></script>
+    <script src="/lib/layer/layui.js"></script>
+
+</head>
+<style>
+    .icon-search {
+        background: url(/img/yong.png) no-repeat;
+        width: 20px;
+        height: 20px;
+        position: absolute;
+        top: -47px;
+        left: -13px;
+    }
+    .icon-search1 {
+        background: url(/img/mima.png) no-repeat;
+        width: 20px;
+        height: 20px;
+        position: absolute;
+        top: -1px;
+        left: -13px;
+    }
+    .icon-search2 {
+        background: url(/img/js.png) ;
+        width: 20px;
+        height: 20px;
+        position: absolute;
+        top: 16px;
+        left: -13px;
+    }
+
+    .icon-searche {
+        background: url(/img/yx.png) no-repeat;
+        background-size:cover ;
+        width: 20px;
+        height: 21px;
+        position: absolute;
+        top: 75px;
+        left: 104px;
+    }
+    .icon-search1e {
+        background: url(/img/yanzheng.png) no-repeat;
+        background-size:cover ;
+        width: 15px;
+        height: 16px;
+        position: absolute;
+        top: 123px;
+        left: 106px;
+    }
+    #Dian {
+        background: #fff;
+        width: 5px;
+        height: 5px;
+        border-radius: 50%;
+        display: inline-block;
+        margin-left: 5px;
+        margin-right: 5px;
+        position: relative;
+        top: -4px;
+    }
+
+    #Dian1 {
+        background: #fff;
+        width: 5px;
+        height: 5px;
+        border-radius: 50%;
+        display: inline-block;
+        margin-left: 5px;
+        margin-right: 5px;
+        position: relative;
+        top: -4px;
+    }
+
+    #Dian2 {
+        background: #fff;
+        width: 5px;
+        height: 5px;
+        border-radius: 50%;
+        display: inline-block;
+        margin-left: 5px;
+        margin-right: 5px;
+        position: relative;
+        top: -4px;
+    }
+#form-div #form1 .kh{
+    font-size: small;
+    color: white;
+    position: relative;
+    left: -13px;
+    top: 50px;
+}
+    #form-div #form1 .jl{
+        font-size: small;
+        color: white;
+        position: relative;
+        left: 17px;
+        top: 50px;
+    }
+    #form-div #form1 .xt{
+        font-size: small;
+        color: white;
+        position: relative;
+        left: 51px;
+        top: 50px;
+    }
+    #form-div #form1 .zhuce{
+        font-size: small;
+        color: #dce7ee;
+        position: relative;
+        left: 166px;
+        top: -12px;
+    }
+
+    #form-div #form1 .zhuce:hover{
+        font-size: small;
+        color: white;
+        position: relative;
+        left: 166px;
+        top: -11px;
+    }
+    #form-div #form1
+    {
+        position: relative;
+        left: 125px;
+        top: 79px;
+    }
+    .login1{
+        width:235px;
+        height:30px;
+        position:relative;
+        top:24px;
+        left:-72px;
+        background:#076EC9;
+        border:0.5px solid #076EC9;
+    }
+
+    .login1:hover{
+        width:235px;
+        height:30px;
+        position:relative;
+        top:23px;
+        left:-72px;
+        background:#38a1d5;
+        border:0.5px solid #38a1d5;
+        cursor: pointer;
+    }
+
+    /*.login2{*/
+    /*    width:235px;*/
+    /*    height:30px;*/
+    /*    position:relative;*/
+    /*    top:112px;*/
+    /*    left:6px;*/
+    /*    background:#076EC9;*/
+    /*    border:0.5px solid #076EC9;*/
+
+    /*}*/
+
+    /*.login2:hover{*/
+    /*    width:235px;*/
+    /*    height:30px;*/
+    /*    position:relative;*/
+    /*    top:110px;*/
+    /*    left:6px;*/
+    /*    background:#38a1d5;*/
+    /*    border:0.5px solid #38a1d5;*/
+    /*    cursor: pointer;*/
+    /*}*/
+
+    .send{
+        width:235px;
+        height:30px;
+        position:relative;
+        top:123px;
+        left:98px;
+        background:#38a1d5;
+        border:0.5px solid #38a1d5;
+
+    }
+
+    .send:hover{
+        width:235px;
+        height:30px;
+        position:relative;
+        top:122px;
+        left:98px;
+        background:#076EC9;
+        border:0.5px solid #076EC9;
+
+        cursor: pointer;
+    }
+    .login2{
+        width:235px;
+        height:30px;
+        position:relative;
+        top:129px;
+        left:98px;
+        background:#38a1d5;
+        border:0.5px solid #38a1d5;
+
+    }
+
+    .login2:hover{
+        width:235px;
+        height:30px;
+        position:relative;
+        top:128px;
+        left:98px;
+
+        background:#076EC9;
+        border:0.5px solid #076EC9;
+
+        cursor: pointer;
+    }
+
+    .ylogin{
+        font-size: small;
+        color:#dce7ee ;
+        position:relative;
+        top:64px;
+        left:-43px;
+        border:0.5px solid #076EC9;
+
+    }
+
+    .ylogin:hover{
+        font-size: small;
+        color:white;
+        position:relative;
+        top:63px;
+        left:-43px;
+        /*background:#38a1d5;*/
+        border:2px solid #38a1d5;
+        cursor: pointer;
+    }
+
+    .ylogin1{
+        font-size: small;
+        color:#dce7ee ;
+        width:235px;
+        height:30px;
+        position:relative;
+        top:160px;
+        left:129px;
+        border:0.5px solid #076EC9;
+
+    }
+    /*#form-div #form1 .BaoMi{*/
+    /*    position: relative;*/
+    /*    left: 125px;*/
+    /*    top: 79px;*/
+    /*}*/
+    .ylogin1:hover{
+        font-size: small;
+        color:white;
+        width:235px;
+        height:30px;
+        position:relative;
+        top:159px;
+        left:129px;
+        /*background:#38a1d5;*/
+        border:2px solid #38a1d5;
+        cursor: pointer;
+    }
+</style>
+<body>
+
+<div id="J_shao">
+    <span></span>
+    <div id="Dian"></div>
+    <span></span>
+    <div id="Dian1"></div>
+    <span></span>
+    <div id="Dian2"></div>
+    <span></span>
+</div>
+<div id="form-div">
+    <img  id="img1"/>
+    <h1></h1>
+    <p id="tbale"></p>
+
+    <form name="DL" id="form1"  onsubmit="return false" action="" method="post">
+        <i class="icon-search"></i>
+        <input name="userName" type="text"  id="username"/>
+        <i class="icon-search1"></i>
+        <input name="password" type="password" id="password"/>
+        <i class="icon-search2"></i>
+        <div class="layui-form-item" id="divjs">
+            <div class="layui-input-block">
+                <select name="js" id="js">
+                    <option value="">请选择登录身份</option>
+                    <option value="客户信息管理员" selected="selected">客户信息管理员</option>
+                    <option value="客户经理">客户经理</option>
+                    <option value="系统管理员">系统管理员</option>
+
+                </select>
+            </div>
+        </div>
+
+
+        <a class="zhuce" id="zhuce" href="/login/zhucePage" >注册账号</a>
+        <button class="login1" type="button" onclick="login()">登录</button>
+        <a class="ylogin" onclick="ddd(1)">邮箱登录</a>
+        <span   id="sp" ></span>
+    </form>
+
+    <form name="DL" id="form2" style="display: none" onsubmit="return false" action="" method="post">
+        <i class="icon-searche" ></i>
+        <input name="email" type="text" id="email"/>
+        <i class="icon-search1e"></i>
+        <input name="code" type="text" id="code"/>
+<!--        <a class="zhuce" id="zhuce1" href="/login/zhucePage" >注册账号</a>-->
+        <button class="send" type="button" onclick="sendCode()">发送验证码</button>
+        <button class="login2" type="button" onclick="ylogin()">登录</button>
+        <a class="ylogin1" onclick="ddd(0)">用户登录</a>
+<!--        <span   id="e" ></span>-->
+    </form>
+</form>
+</div>
+
+</body>
+</html>
+<script>
+
+    $(document).ready(function () {
+        $('#J_shao').attr('style', 'position: relative;text-align: center;top: 275px;')
+        $('#AA').removeAttr('display')
+        $('#img1').attr('src', '/img/logo.png')
+        $('#img1').attr('style', 'width: 100px;height:100px;position: absolute;margin-left:50px;margin-top:-170px;')
+        $('h1').text('桔 子')
+        $('h1').attr("style", "color:#fff;position:absolute;margin-left:220px;margin-top:-161px;font-size:50px;")
+        $('#J_shao span:eq(0)').text('高效')
+        $('#J_shao span:eq(0)').attr('style', 'color:#FFF;font-size:20px')
+        $('#J_shao span:eq(1)').text('便捷')
+        $('#J_shao span:eq(1)').attr('style', 'color:#FFF;font-size:20px')
+        $('#J_shao span:eq(2)').text('安全')
+        $('#J_shao span:eq(2)').attr('style', 'color:#FFF;font-size:20px')
+        $('#J_shao span:eq(3)').text('免费')
+        $('#J_shao span:eq(3)').attr('style', 'color:#FFF;font-size:20px')
+        $('html').css('height', '100%')
+        $('body').attr('style', 'background-image: url(/img/b1.jpg);background-size:100% 100%;background-repeat: no-repeat;width:99%;height:92%')
+        $('#username').attr('placeholder', '用户名')
+        $('#js').attr('placeholder', '请选择登录身份')
+        $('#email').attr('placeholder', '邮箱')
+        $('#kh').attr('style', 'width: 20px;height:20px;left:-41px;top:50px;position:absolute;')
+        $('#jl').attr('style', 'width: 20px;height:20px;left:61px;top:50px;position:absolute;')
+        $('#xt').attr('style', 'width: 20px;height:20px;left:151px;top:50px;position:absolute;')
+
+        $('#password').attr('style', ' font-size: small;width: 205px;height:30px;left:-16px;position:absolute;margin-top:-5px;color:#fff;box-shadow: 0px 0px 6px 1px #fff;border: 1px solid #fff0;background:#ffffff60;padding-left:25px')
+        $('#code').attr('style', 'width: 205px;height:30px;left:100px;position:absolute;margin-top:83px;color:#fff;box-shadow: 0px 0px 6px 1px #fff;border: 1px solid #fff0;background:#ffffff60;padding-left:25px')
+        $('#username').attr('style', ' font-size: small;width: 205px;height:30px;left:-17px;position:absolute;margin-top:-51px;color:#fff;box-shadow: 0px 0px 6px 1px #fff;border: 1px solid #fff0;background:#ffffff60;padding-left:25px')
+        $('#js').attr('style', ' font-size: small;width: 118px;height:22px;left:-127px;position:absolute;margin-top:43px;color:#fff;box-shadow: 0px 0px 6px 1px #fff;border: 1px solid #fff0;background:#ffffff60;padding-left:-12px')
+        $('#email').attr('style', 'width: 205px;height:30px;left:100px;position:absolute;margin-top:36px;color:#fff;box-shadow: 0px 0px 6px 1px #fff;border: 1px solid #fff0;background:#ffffff60;padding-left:25px')
+        // $('#JZW').attr('style', 'width: 20px;height:20px;left:98px;top:150px;position:absolute;')
+        $('#password').attr('placeholder', '密码')
+        $('#code').attr('placeholder', '验证码')
+        // $('button').text('登录')
+        // $('button').attr('style', 'width:235px;height:30px;position:relative;top:110px;left:-8px;background:#076EC9;border:0.5px solid #076EC9;')
+        $('p').text("客户信息管理系统")
+        $('#tbale').attr('style', 'color:#fff;font-size:25px;text-align:center;top:8px;position: relative;')
+        $('#form-div').attr('style', 'background:#fff3;width:440px;height:260px;position:relative;margin: 0 auto;top:290px;border-radius: 10px;')
+        $('#sp').attr('style', 'color:#fff;position:absolute;margin-left:-340px;margin-top:66px;width: 187px;height: 30px')
+    })
+    layui.use(['form','layer'], function(){
+        $ = layui.jquery;
+        var form = layui.form
+            ,layer = layui.layer;
+
+        //自定义验证规则
+        form.verify({
+            password: function(value){
+                if(value.length < 3){
+                    return '登录密码至少4个字符';
+                }
+            }
+            // ,newPwd: [/(.+){6,12}$/, '密码必须6到12位']
+
+
+        });
+    });
+
+
+
+    //邮件登录
+        function ylogin(){
+            var code=document.getElementById('code').value;
+
+        // console.log(data.field);
+        //验证邮箱验证码不能为空
+        if(code==null){
+            layui.use(['layer', 'form'], function () {
+                var layer = layui.layer
+                    , form = layui.form;
+                layer.msg('验证码不能为空！', {icon: 5});
+            });
+            return false;
+        }
+        // 发送 ajax请求
+        $.ajax({
+            url: "/login/emailLogin",
+            type: "post",
+            data:{"code":code},
+            dataType: "json",//返回的数据类型
+            success: function (data) {
+                //定义{info:"登录成功"}
+                layui.use(['layer', 'form'], function () {
+                    var layer = layui.layer
+                        , form = layui.form;
+                    layer.msg(data.info);
+                });
+                if(data.info=="邮箱登录成功"){
+                    console.log("邮箱登录成功");
+                    window.location.href="/index";
+
+                }
+                // $("#e").text(data.info);
+            }
+
+        })
+        return false;
+    }
+
+
+
+    //发送验证码
+        function sendCode(){
+            var email=document.getElementById("email").value;
+        // console.log(data.field);
+        //  发送 ajax请求
+        $.ajax({
+            url: "/login/sendEmail",
+            type: "post",
+            data:{"email":email} ,
+            dataType: "json",//返回的数据类型
+            success: function (data) {
+                //定义{info:"登录成功"}
+                // $("#e").text(data.info);
+                layui.use(['layer', 'form'], function () {
+                    var layer = layui.layer
+                        , form = layui.form;
+                    layer.msg(data.info);
+                });
+            }
+        })
+        return data;
+    }
+
+
+    //邮箱登录与用户登录表单切换
+    function ddd(num){
+        if(num==1){
+            //显示邮箱登陆
+            $("#form2").show();
+            //隐藏用户登录
+            $("#form1").hide();
+            // //更改标题
+            // $(".message").text("邮箱登陆");
+
+        }else
+        {
+            //显示用户登陆
+            $("#form1").show();
+            //隐藏邮箱登录
+            $("#form2").hide();
+            // //更改标题
+            // $(".message").text("用户登陆");
+
+        }
+    }
+
+
+
+    function remember() {
+
+        var remFlag = $("input[type='checkbox']").is(':checked');
+
+        if(remFlag==true){ //如果选中设置remFlag为1
+            //cookie存用户名和密码,回显的是真实的用户名和密码,存在安全问题.
+            var conFlag = confirm("记录密码功能不宜在公共场所使用,以防密码泄露.您确定要使用此功能吗?");
+            if(conFlag){ //确认标志
+                $("#remFlag").val("1");
+            }else{
+                $("input[type='checkbox']").removeAttr('checked');
+                $("#remFlag").val("");
+            }
+        }else{ //如果没选中设置remFlag为""
+            $("#remFlag").val("");
+        }
+
+    }
+
+    function login() {
+        var Name = document.getElementById('username').value;
+        var pass = document.getElementById('password').value;
+        var remFlag = $("#remFlag").val();
+
+        var js=$("#js").val();
+
+
+
+        if (pass == "" && Name == "") {
+            layui.use(['layer', 'form'], function () {
+                var layer = layui.layer
+                    , form = layui.form;
+                layer.msg('用户名和密码不能为空!', {icon: 5});
+            });
+        } else if (Name == "") {
+            layui.use(['layer', 'form'], function () {
+                var layer = layui.layer
+                    , form = layui.form;
+                layer.msg('请输入账号', {icon: 5});
+            });
+        } else if (pass == "") {
+            layui.use(['layer', 'form'], function () {
+                var layer = layui.layer
+                    , form = layui.form;
+                layer.msg('请输入密码', {icon: 5});
+            });
+        } else {
+            //发送 ajax请求
+            $.ajax({
+                url:"/login/loginAjax",
+                type:"post",
+                data:{"userName":Name,"userPwd":pass,"remFlag":remFlag,"js":js},
+                dataType:"json",//返回的数据类型
+                success:function(data){
+                    //定义{info:"登录成功"}
+                    // $("#info").text(data.info);
+                    $("#sp").text(data.info);
+                    console.log(data.info);
+                    if(data.info=="登录成功"){
+                        console.log("登录成功");
+                        window.location.href="/index";
+                    }
+
+                }
+
+            })
+        }
+
+    }
+</script>
+                                                           

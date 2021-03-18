@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>
+        后台管理系统
+    </title>
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <link rel="stylesheet" href="./css/x-admin.css" media="all">
+    <script src="./js/jquery-3.2.1.min.js"></script>
+    <style>
+        .imgs{display: none;}
+    </style>
+    <!--百度编辑器-->
+    <!--    <script src="./ueditor/ueditor.config.js"></script>-->
+    <!--&lt;!&ndash;    <script src="./ueditor/ueditor.allmin.js"></script>&ndash;&gt;-->
+    <!--    <script src="./ueditor/lang/zh-cn/zh-cn.js"></script>-->
+</head>
+<div class="x-nav">
+            <span class="layui-breadcrumb">
+              <a><cite>首页</cite></a>
+              <a><cite>客户经理管理</cite></a>
+              <a><cite>经理列表</cite></a>
+                <a><cite>添加信息</cite></a>
+            </span>
+    <a class="layui-btn layui-btn-small" style="line-height:1.6em;margin-top:3px;float:right"  href="javascript:location.replace(location.href);" title="刷新"><i class="layui-icon" style="line-height:30px">ဂ</i></a>
+</div>
+<div class="x-body">
+    <form class="layui-form layui-form-pane" action="" id="add" method="post" enctype="multipart/form-data">
+        <div class="layui-tab layui-tab-brief" lay-filter="docDemoTabBrief">
+            <ul class="layui-tab-title">
+                <li class="layui-this">经理基本信息</li>
+                <li>其他信息</li>
+            </ul>
+
+            <div class="layui-tab-content" >
+                <div class="layui-tab-item layui-show">
+                    <!--                    <form class="layui-form layui-form-pane" action="" id="add">-->
+
+                    <!--                    <div class="layui-form-item">-->
+                    <!--                        <label class="layui-form-label">-->
+                    <!--                            <span class='x-red'>*</span>上级栏目-->
+                    <!--                        </label>-->
+                    <!--                        <div class="layui-input-block">-->
+                    <!--                            <select name="pid" id="pid">-->
+
+                    <!--                                <option value="0" selected="selected">顶级栏目</option>-->
+                    <!--                                <option value="0">文章</option>-->
+
+                    <!--                            </select>-->
+                    <!--                        </div>-->
+                    <!--                    </div>-->
+                    <div class="layui-form-item">
+                        <label class="layui-form-label">
+                            <span class='x-red'>*</span>经理姓名
+                        </label>
+                        <div class="layui-input-block">
+                            <input type="text" name="manager" autocomplete="off" placeholder="控制在10个汉字，20个字符以内"
+                                   class="layui-input">
+                        </div>
+                    </div>
+                    <div class="layui-form-item">
+                        <label class="layui-form-label">
+                            <span class='x-red'>*</span>性别
+                        </label>
+                        <div class="layui-input-block" >
+                            <input type="radio" name="gender" value="男" title="男" checked="checked">
+                            <div class="layui-unselect layui-form-radio layui-form-radioed"><i class="layui-anim layui-icon layui-anim-scaleSpring"></i>
+                                <div  style="font-size: 14px">男</div>
+                            </div>
+                            <input type="radio" name="gender" value="女" title="女">
+                            <div class="layui-unselect layui-form-radio"  style="font-size: 14px"><i class="layui-anim layui-icon"></i>
+                                <div>女</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="layui-form-item">
+                        <input type="hidden" name="url" class="image" id="url">
+                        <div class="layui-form-item">
+                            <label class="layui-form-label "><span class='x-red'>*</span>照片:</label>
+                            <div class="layui-upload">
+                                <button type="button" class="layui-btn" id="test1">上传头像</button>
+                                <div class="layui-upload-list" style="margin-left: 100px">
+                                    <img class="layui-upload-img" id="demo1" width="120" height="120"style="margin-top: 16px;margin-left: 12px">
+                                    <p id="demoText"></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="layui-form-item">
+                        <label class="layui-form-label">
+                            <span class='x-red'>*</span>身份证号码
+                        </label>
+                        <div class="layui-input-block">
+                            <input type="text" name="idn" autocomplete="off"
+                                   class="layui-input">
+                        </div>
+                    </div>
+
+
+                    <div class="layui-form-item">
+                        <label class="layui-form-label">
+                            <span class='x-red'>*</span>联系电话
+                        </label>
+                        <div class="layui-input-block">
+                            <input type="text" name="phone" value="" autocomplete="off"
+                                   class="layui-input">
+                        </div>
+                    </div>
+
+                    <div class="layui-form-item">
+                        <label class="layui-form-label">
+                            <span class='x-red'>*</span>邮箱地址
+                        </label>
+                        <div class="layui-input-block">
+                            <input type="text" name="email" value="" autocomplete="off" placeholder="输入请符合邮箱格式"
+                                   class="layui-input">
+                        </div>
+                    </div>
+
+                    <div class="layui-form-item">
+                        <label class="layui-form-label"><span class='x-red'>*</span>出生日期</label>
+                        <div class="layui-input-inline">
+                            <input class="layui-input" placeholder="请选择" id="bdate" name="bdate">
+                        </div>
+                    </div>
+
+                    <div class="layui-form-item">
+                        <label class="layui-form-label">
+                            <span class='x-red'>*</span>学历
+                        </label>
+                        <div class="layui-input-block">
+                            <input type="text" name="edu" autocomplete="off" placeholder="控制在20个字、40个字节以内"
+                                   class="layui-input">
+                        </div>
+                    </div>
+
+
+                    <div style="height:100px;"></div>
+                </div>
+
+                <div class="layui-tab-item">
+
+
+                    <!--                      <form class="layui-form layui-form-pane" action="" id="add">-->
+
+
+
+
+                    <div class="layui-form-item layui-form-text">
+                        <label class="layui-form-label">
+                            备注
+                        </label>
+                        <div class="layui-input-block">
+                            <textarea placeholder="请输入内容" name="tips" class="layui-textarea"></textarea>
+                        </div>
+                    </div>
+
+                    <div class="layui-form-item" style="width: 64px;height: 38px"  onclick="submit()" >
+                        <button class="layui-btn"  type="button">
+                            保存
+                        </button>
+                    </div>
+
+
+                </div>
+            </div>
+        </div>
+    </form>
+
+
+
+
+
+
+    <script src="./lib/layui/layui.js" charset="utf-8"></script>
+    <script src="./js/x-layui.js" charset="utf-8"></script>
+    <!--<script type="text/javascript">-->
+    <!--    // //实例化编辑器-->
+    <!--    // //建议使用工厂方法getEditor创建和引用编辑器实例，如果在某个闭包下引用该编辑器，直接调用UE.getEditor('editor')就能拿到相关的实例-->
+    <!--    // UE.getEditor('content',{initialFrameWidth:600,initialFrameHeight:400,});-->
+    <!--</script>-->
+    <script>
+        layui.use(['laydate','element','layer','form'], function(){
+            $ = layui.jquery;//jquery
+            laydate = layui.laydate;//日期插件
+            lement = layui.element;//面包导航
+            layer = layui.layer;//弹出层
+            form = layui.form;
+
+
+            var start = {
+                min: '1600-06-16 23:59:59'
+                ,max: '2099-06-16 23:59:59'
+                ,istoday: false
+                ,choose: function(datas){
+                    end.min = datas; //开始日选好后，重置结束日的最小日期
+                    end.start = datas //将结束日的初始值设定为开始日
+                }
+            };
+            document.getElementById('bdate').onclick = function(){
+                start.elem = this;
+                laydate(start);
+            }
+
+
+
+
+        })
+    </script>
+
+    <!--栏目缩略图上传-->
+    <script>
+        //按钮提交
+        function submit() {
+            layer.msg("添加失败",{icon:5,time:2000});
+            // form.on('submit(add)', function(data){
+            var manager=$("input[name='manager']").val();
+            var url=$("input[name='url']").val();
+            var idn=$("input[name='idn']").val();
+            var phone=$("input[name='phone']").val();
+            var email=$("input[name='email']").val();
+            var bdate=$("input[name='bdate']").val();
+            var edu=$("input[name='edu']").val();
+            var tips=$("textarea[name='tips']").val();
+            var gender=$("input[name='gender']:checked").val();
+            // var idn=$('#pid option:selected') .val();//所属栏目ID
+
+
+            if(manager==""||idn==""||phone==""||email==""||bdate==""||url==""||edu=="")
+            {
+                layer.msg('必填项不能为空！',{icon:5,time:2000});return false;
+            }
+
+            else{
+                if(tips==""){
+                    tips="/";
+                }
+                $.ajax({
+                    type:"post",
+                    url:"/addJl",
+                    data:{"manager":manager,"gender":gender,"url":url,"phone":phone,"email":email,"bdate":bdate,"edu":edu,"idn":idn,"tips":tips},
+                    dataType:"json",
+                    success:function(data)
+                    {
+                        if(data.info == "添加成功") {
+
+
+                            layer.msg(data.info, {icon: 6, time: 2000}, function () {
+                                window.parent.location.reload();
+                                var index = parent.layer.getFrameIndex(window.name);
+                                parent.layer.close(index);
+                            });
+                            return false;
+                        }
+
+                        else{
+                            layer.msg(data.info,{icon:5,time:2000});return false;
+                        }
+                    }
+
+                });}
+        }
+
+        //加载文件上传组件
+        layui.use('upload', function(){
+
+            var $ = layui.jquery
+                ,upload = layui.upload;
+            //普通图片上传（上传按钮点击事件）
+            var uploadInst = upload.render({
+                elem: '#test1'  //通过id绑定按钮点击事件
+                ,url: '/upload'  //服务器地址
+                ,accept:'url'      //上传的文件类型 （image,file(所有文件)，video，audio（音频））
+                ,size:50000       //文件大小
+                ,before: function(obj){  //不管上传成功或失败都会执行
+                    obj.preview(function(index, file, result){
+                        //显示上传图片
+                        $('#demo1').attr('src', result);
+                    });
+                }
+                ,done: function(res){  //访问服务端后执行的函数（res是服务端传回的值）
+                    //如果上传失败
+                    if(res.code > 0){
+                        return layer.msg('上传失败');
+                    }
+                    //上传成功
+                    //提示信息
+                    var demoText = $('#demoText');
+                    demoText.html('<span style="color: #4cae4c;">上传成功</span>');
+
+                    // var fileupload = $(".image");
+                    // //把图片在项目中的路径存入到 属性 class=image的input框中
+                    // fileupload.attr("value",res.data.src);
+                    $("#url").val(res.src);
+
+                    // console.log(fileupload.attr("value"));
+                }
+                ,error: function(){
+                    //演示失败状态，并实现重传
+                    var demoText = $('#demoText');
+                    demoText.html('<span style="color: #FF5722;">上传失败</span> <a class="layui-btn layui-btn-xs demo-reload">重试</a>');
+                    demoText.find('.demo-reload').on('click', function(){
+                        uploadInst.upload();
+                    });
+                }
+            });
+        });
+
+
+        //保存
+        function saveHead(){
+            var url=$("#url").val();
+            $.ajax({
+                url:"/saveHead",
+                type:"get",
+                data:{"url":url},
+                dataType:"json",//返回的数据类型
+                success:function(data){
+                    if(data.info=="保存成功"){
+                        layer.alert("保存成功",function (index) {
+                            //关闭弹窗
+                            //关闭弹窗
+                            // 获得frame索引
+                            var index = parent.layer.getFrameIndex(window.name);
+                            //关闭当前frame
+                            parent.layer.close(index);
+                            //更改当前路径头像
+                            // parent.$("#head").attr("src",url);
+
+                        })
+                    }else {
+                        layer.alert("保存失败");
+                    }
+
+                }
+            })
+        }
+
+    </script>
+
+</div>
+</html>
